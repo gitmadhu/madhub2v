@@ -1,3 +1,4 @@
+
 package com.mera;
 
 import java.io.File;
@@ -25,7 +26,7 @@ public class CreateImpex {
 			
 			 CSVReader reader = new CSVReader(new FileReader("44 stores.txt"), ';');
 			 
-			final File baseDir = new File("44stores");
+			final File baseDir = new File("3stores");
 			if (!baseDir.exists())
 			{
 				baseDir.mkdir();
@@ -59,7 +60,7 @@ public class CreateImpex {
 					   
 					}
 				} catch (IOException e) {
-					System.out.println("problem creating ...."+storeCode);
+					System.out.println("problem creating ...."+e);
 				}
 			
 		} catch (FileNotFoundException e) {

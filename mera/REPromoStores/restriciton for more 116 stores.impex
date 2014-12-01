@@ -1,0 +1,389 @@
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0298001_storePromo_restr              ;H0298001 Store Promotion Restriction      ;{businessUnit}=8796324515364   ;H0298001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0299001_storePromo_restr              ;H0299001 Store Promotion Restriction      ;{businessUnit}=8796324548132   ;H0299001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0300001_storePromo_restr              ;H0300001 Store Promotion Restriction      ;{businessUnit}=8796191968804   ;H0300001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0301001_storePromo_restr              ;H0301001 Store Promotion Restriction      ;{businessUnit}=8796191936036   ;H0301001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0302001_storePromo_restr              ;H0302001 Store Promotion Restriction      ;{businessUnit}=8796322483748   ;H0302001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0303001_storePromo_restr              ;H0303001 Store Promotion Restriction      ;{businessUnit}=8796159004196   ;H0303001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+							   
+							   
+							   
+							   
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0305001_storePromo_restr              ;H0305001 Store Promotion Restriction      ;{businessUnit}=8796324580900   ;H0305001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0306001_storePromo_restr              ;H0306001 Store Promotion Restriction      ;{businessUnit}=8796191903268   ;H0306001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0307001_storePromo_restr              ;H0307001 Store Promotion Restriction      ;{businessUnit}=8796324613668   ;H0307001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0308001_storePromo_restr              ;H0308001 Store Promotion Restriction      ;{businessUnit}=8796192099876   ;H0308001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0309001_storePromo_restr              ;H0309001 Store Promotion Restriction      ;{businessUnit}=8796193508900   ;H0309001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0310001_storePromo_restr              ;H0310001 Store Promotion Restriction      ;{businessUnit}=8796192001572   ;H0310001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0310002_storePromo_restr              ;H0310002 Store Promotion Restriction      ;{businessUnit}=8796257275428   ;H0310002_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0311001_storePromo_restr              ;H0311001 Store Promotion Restriction      ;{businessUnit}=8796192034340   ;H0311001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+							   
+							   
+						   
+							   
+							   
+							   INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;J1001001_storePromo_restr              ;J1001001 Store Promotion Restriction      ;{businessUnit}=8796617428516   ;J1001001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;J1002001_storePromo_restr              ;J1002001 Store Promotion Restriction      ;{businessUnit}=8796519353892   ;J1002001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;J1003001_storePromo_restr              ;J1003001 Store Promotion Restriction      ;{businessUnit}=8796519255588   ;J1003001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;J1005001_storePromo_restr              ;J1005001 Store Promotion Restriction      ;{businessUnit}=8796519288356   ;J1005001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;J1006001_storePromo_restr              ;J1006001 Store Promotion Restriction      ;{businessUnit}=8796519321124   ;J1006001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;J1007001_storePromo_restr              ;J1007001 Store Promotion Restriction      ;{businessUnit}=8796584857124   ;J1007001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;J1008001_storePromo_restr              ;J1008001 Store Promotion Restriction      ;{businessUnit}=8796584988196   ;J1008001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;J2001001_storePromo_restr              ;J2001001 Store Promotion Restriction      ;{businessUnit}=8796519550500   ;J2001001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;J2002001_storePromo_restr              ;J2002001 Store Promotion Restriction      ;{businessUnit}=8796519419428   ;J2002001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;J2003001_storePromo_restr              ;J2003001 Store Promotion Restriction      ;{businessUnit}=8796584889892   ;J2003001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;J2005001_storePromo_restr              ;J2005001 Store Promotion Restriction      ;{businessUnit}=8796584922660   ;J2005001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;J2006001_storePromo_restr              ;J2006001 Store Promotion Restriction      ;{businessUnit}=8796584955428   ;J2006001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;J3002001_storePromo_restr              ;J3002001 Store Promotion Restriction      ;{businessUnit}=8796519452196   ;J3002001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;J3003001_storePromo_restr              ;J3003001 Store Promotion Restriction      ;{businessUnit}=8796519484964   ;J3003001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;J3003002_storePromo_restr              ;J3003002 Store Promotion Restriction      ;{businessUnit}=8796519517732   ;J3003002_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;J3005001_storePromo_restr              ;J3005001 Store Promotion Restriction      ;{businessUnit}=8796617395748   ;J3005001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+
+							   
+
+							   
+							   
+							   
+							   
+							   
+							   
+							   
+							   
+							   
+							   
+							   INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;K0100001_storePromo_restr              ;K0100001 Store Promotion Restriction      ;{businessUnit}=8796323860004   ;K0100001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;K0101001_storePromo_restr              ;K0101001 Store Promotion Restriction      ;{businessUnit}=8796388019748   ;K0101001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;K0102001_storePromo_restr              ;K0102001 Store Promotion Restriction      ;{businessUnit}=8796388085284   ;K0102001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;K0103001_storePromo_restr              ;K0103001 Store Promotion Restriction      ;{businessUnit}=8796388118052   ;K0103001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;K0105001_storePromo_restr              ;K0105001 Store Promotion Restriction      ;{businessUnit}=8796388150820   ;K0105001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;K0106001_storePromo_restr              ;K0106001 Store Promotion Restriction      ;{businessUnit}=8796323827236   ;K0106001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;K0107001_storePromo_restr              ;K0107001 Store Promotion Restriction      ;{businessUnit}=8796323794468   ;K0107001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+							   
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;K0108001_storePromo_restr              ;K0108001 Store Promotion Restriction      ;{businessUnit}=8796388183588   ;K0108001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;K0109001_storePromo_restr              ;K0109001 Store Promotion Restriction      ;{businessUnit}=8796388216356   ;K0109001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;K0110001_storePromo_restr              ;K0110001 Store Promotion Restriction      ;{businessUnit}=8796388249124   ;K0110001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;K0111001_storePromo_restr              ;K0111001 Store Promotion Restriction      ;{businessUnit}=8796388281892   ;K0111001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;K0112001_storePromo_restr              ;K0112001 Store Promotion Restriction      ;{businessUnit}=8796388314660   ;K0112001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;K0113001_storePromo_restr              ;K0113001 Store Promotion Restriction      ;{businessUnit}=8796388347428   ;K0113001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;K0115001_storePromo_restr              ;K0115001 Store Promotion Restriction      ;{businessUnit}=8796388380196   ;K0115001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;K0116001_storePromo_restr              ;K0116001 Store Promotion Restriction      ;{businessUnit}=8796323892772   ;K0116001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+							   
+							   
+							   
+							   
+							   
+							   
+							   
+							   
+							   
+							   
+							   
+							   
+							   
+							   
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;K0117001_storePromo_restr              ;K0117001 Store Promotion Restriction      ;{businessUnit}=8796323761700   ;K0117001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;K0118001_storePromo_restr              ;K0118001 Store Promotion Restriction      ;{businessUnit}=8796388412964   ;K0118001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;K0119001_storePromo_restr              ;K0119001 Store Promotion Restriction      ;{businessUnit}=8796388445732   ;K0119001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;K0120001_storePromo_restr              ;K0120001 Store Promotion Restriction      ;{businessUnit}=8796323728932   ;K0120001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;K0121001_storePromo_restr              ;K0121001 Store Promotion Restriction      ;{businessUnit}=8796388478500   ;K0121001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+							   
+							   INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0312001_storePromo_restr              ;H0312001 Store Promotion Restriction      ;{businessUnit}=8796324646436   ;H0312001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0313001_storePromo_restr              ;H0313001 Store Promotion Restriction      ;{businessUnit}=8796324679204   ;H0313001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0315001_storePromo_restr              ;H0315001 Store Promotion Restriction      ;{businessUnit}=8796192165412   ;H0315001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0316001_storePromo_restr              ;H0316001 Store Promotion Restriction      ;{businessUnit}=8796192132644   ;H0316001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0317001_storePromo_restr              ;H0317001 Store Promotion Restriction      ;{businessUnit}=8796192067108   ;H0317001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0318001_storePromo_restr              ;H0318001 Store Promotion Restriction      ;{businessUnit}=8796355218980   ;H0318001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0318002_storePromo_restr              ;H0318002 Store Promotion Restriction      ;{businessUnit}=8796193672740   ;H0318002_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0319001_storePromo_restr              ;H0319001 Store Promotion Restriction      ;{businessUnit}=8796193705508   ;H0319001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0320001_storePromo_restr              ;H0320001 Store Promotion Restriction      ;{businessUnit}=8796324711972   ;H0320001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0321001_storePromo_restr              ;H0321001 Store Promotion Restriction      ;{businessUnit}=8796682898980   ;H0321001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0323002_storePromo_restr              ;H0323002 Store Promotion Restriction      ;{businessUnit}=8796715732516   ;H0323002_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0323003_storePromo_restr              ;H0323003 Store Promotion Restriction      ;{businessUnit}=8796715765284   ;H0323003_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0325001_storePromo_restr              ;H0325001 Store Promotion Restriction      ;{businessUnit}=8796682931748   ;H0325001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0326001_storePromo_restr              ;H0326001 Store Promotion Restriction      ;{businessUnit}=8796715798052   ;H0326001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0326002_storePromo_restr              ;H0326002 Store Promotion Restriction      ;{businessUnit}=8796715830820   ;H0326002_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0326003_storePromo_restr              ;H0326003 Store Promotion Restriction      ;{businessUnit}=8796715863588   ;H0326003_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0330001_storePromo_restr              ;H0330001 Store Promotion Restriction      ;{businessUnit}=8796682964516   ;H0330001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0330002_storePromo_restr              ;H0330002 Store Promotion Restriction      ;{businessUnit}=8796682997284   ;H0330002_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0330003_storePromo_restr              ;H0330003 Store Promotion Restriction      ;{businessUnit}=8796715666980   ;H0330003_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0337001_storePromo_restr              ;H0337001 Store Promotion Restriction      ;{businessUnit}=8796192493092   ;H0337001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0338001_storePromo_restr              ;H0338001 Store Promotion Restriction      ;{businessUnit}=8796193443364   ;H0338001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0339001_storePromo_restr              ;H0339001 Store Promotion Restriction      ;{businessUnit}=8796324744740   ;H0339001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0352001_storePromo_restr              ;H0352001 Store Promotion Restriction      ;{businessUnit}=8796519583268   ;H0352001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;HK-ITM-00045116_storePromo_restr              ;HK-ITM-00045116 Store Promotion Restriction      ;{businessUnit}=8796584660516   ;HK-ITM-00045116_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0312001_storePromo_restr              ;H0312001 Store Promotion Restriction      ;{businessUnit}=8796324646436   ;H0312001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0313001_storePromo_restr              ;H0313001 Store Promotion Restriction      ;{businessUnit}=8796324679204   ;H0313001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0315001_storePromo_restr              ;H0315001 Store Promotion Restriction      ;{businessUnit}=8796192165412   ;H0315001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0316001_storePromo_restr              ;H0316001 Store Promotion Restriction      ;{businessUnit}=8796192132644   ;H0316001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0317001_storePromo_restr              ;H0317001 Store Promotion Restriction      ;{businessUnit}=8796192067108   ;H0317001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0318001_storePromo_restr              ;H0318001 Store Promotion Restriction      ;{businessUnit}=8796355218980   ;H0318001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0318002_storePromo_restr              ;H0318002 Store Promotion Restriction      ;{businessUnit}=8796193672740   ;H0318002_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0319001_storePromo_restr              ;H0319001 Store Promotion Restriction      ;{businessUnit}=8796193705508   ;H0319001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0320001_storePromo_restr              ;H0320001 Store Promotion Restriction      ;{businessUnit}=8796324711972   ;H0320001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0321001_storePromo_restr              ;H0321001 Store Promotion Restriction      ;{businessUnit}=8796682898980   ;H0321001_store_admingroup    ;HktvStorePromotion	  ;true    ;false							   
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0323002_storePromo_restr              ;H0323002 Store Promotion Restriction      ;{businessUnit}=8796715732516   ;H0323002_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0323003_storePromo_restr              ;H0323003 Store Promotion Restriction      ;{businessUnit}=8796715765284   ;H0323003_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0325001_storePromo_restr              ;H0325001 Store Promotion Restriction      ;{businessUnit}=8796682931748   ;H0325001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0326001_storePromo_restr              ;H0326001 Store Promotion Restriction      ;{businessUnit}=8796715798052   ;H0326001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0326002_storePromo_restr              ;H0326002 Store Promotion Restriction      ;{businessUnit}=8796715830820   ;H0326002_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0326003_storePromo_restr              ;H0326003 Store Promotion Restriction      ;{businessUnit}=8796715863588   ;H0326003_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0330001_storePromo_restr              ;H0330001 Store Promotion Restriction      ;{businessUnit}=8796682964516   ;H0330001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0330002_storePromo_restr              ;H0330002 Store Promotion Restriction      ;{businessUnit}=8796682997284   ;H0330002_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0330003_storePromo_restr              ;H0330003 Store Promotion Restriction      ;{businessUnit}=8796715666980   ;H0330003_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0337001_storePromo_restr              ;H0337001 Store Promotion Restriction      ;{businessUnit}=8796192493092   ;H0337001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0338001_storePromo_restr              ;H0338001 Store Promotion Restriction      ;{businessUnit}=8796193443364   ;H0338001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0339001_storePromo_restr              ;H0339001 Store Promotion Restriction      ;{businessUnit}=8796324744740   ;H0339001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0352001_storePromo_restr              ;H0352001 Store Promotion Restriction      ;{businessUnit}=8796519583268   ;H0352001_store_admingroup    ;HktvStorePromotion	  ;true    ;false							   
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0356006_storePromo_restr              ;H0356006 Store Promotion Restriction      ;{businessUnit}=8796585152036   ;H0356006_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0356007_storePromo_restr              ;H0356007 Store Promotion Restriction      ;{businessUnit}=8796585184804   ;H0356007_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0356008_storePromo_restr              ;H0356008 Store Promotion Restriction      ;{businessUnit}=8796748566052   ;H0356008_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0356009_storePromo_restr              ;H0356009 Store Promotion Restriction      ;{businessUnit}=8796748598820   ;H0356009_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0356010_storePromo_restr              ;H0356010 Store Promotion Restriction      ;{businessUnit}=8796748631588   ;H0356010_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0356011_storePromo_restr              ;H0356011 Store Promotion Restriction      ;{businessUnit}=8796748664356   ;H0356011_store_admingroup    ;HktvStorePromotion	  ;true    ;false							   
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0357001_storePromo_restr              ;H0357001 Store Promotion Restriction      ;{businessUnit}=8796584824356   ;H0357001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0358001_storePromo_restr              ;H0358001 Store Promotion Restriction      ;{businessUnit}=8796748533284   ;H0358001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0359001_storePromo_restr              ;H0359001 Store Promotion Restriction      ;{businessUnit}=8796748467748   ;H0359001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0359002_storePromo_restr              ;H0359002 Store Promotion Restriction      ;{businessUnit}=8796748500516   ;H0359002_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0362001_storePromo_restr              ;H0362001 Store Promotion Restriction      ;{businessUnit}=8796748434980   ;H0362001_store_admingroup    ;HktvStorePromotion	  ;true    ;false							   
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0356003_storePromo_restr              ;H0356003 Store Promotion Restriction      ;{businessUnit}=8796585053732   ;H0356003_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0356004_storePromo_restr              ;H0356004 Store Promotion Restriction      ;{businessUnit}=8796585086500   ;H0356004_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0356005_storePromo_restr              ;H0356005 Store Promotion Restriction      ;{businessUnit}=8796585119268   ;H0356005_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0356012_storePromo_restr              ;H0356012 Store Promotion Restriction      ;{businessUnit}=8796748697124   ;H0356012_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0356013_storePromo_restr              ;H0356013 Store Promotion Restriction      ;{businessUnit}=8796748729892   ;H0356013_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0356014_storePromo_restr              ;H0356014 Store Promotion Restriction      ;{businessUnit}=8796748762660   ;H0356014_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0356001_storePromo_restr              ;H0356001 Store Promotion Restriction      ;{businessUnit}=8796584791588   ;H0356001_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0356002_storePromo_restr              ;H0356002 Store Promotion Restriction      ;{businessUnit}=8796585020964   ;H0356002_store_admingroup    ;HktvStorePromotion	  ;true    ;false
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+								   ;H0355001_storePromo_restr              ;H0355001 Store Promotion Restriction      ;{businessUnit}=8796650130980   ;H0355001_store_admingroup    ;HktvStorePromotion	  ;true    ;false							   
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0353001_storePromo_restr              ;H0353001 Store Promotion Restriction      ;{businessUnit}=8796519616036   ;H0353001 _store_admingroup    ;HktvStorePromotion	  ;true    ;false		
+		
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0323001_storePromo_restr              ;H0323001 Store Promotion Restriction      ;{businessUnit}=8796715699748   ;H0323001 _store_admingroup    ;HktvStorePromotion	  ;true    ;false
+								   
