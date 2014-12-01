@@ -1,0 +1,3 @@
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+			                   ;H0212001_storePromo_restr              ;H0212001 Store Promotion Restriction      ;{businessUnit}=8796322844196   ;H0212001_store_admingroup    ;HktvStorePromotion	  ;true    ;false

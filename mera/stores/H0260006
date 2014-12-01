@@ -1,0 +1,119 @@
+$passwordEncoding=md5
+$defaultPassword=1234
+$setPassword=@password[translator=de.hybris.platform.impex.jalo.translators.ConvertPlaintextToEncodedUserPasswordTranslator][default='$passwordEncoding:$defaultPassword']
+$productCatalog=hktvProductCatalog
+$contentCatalog=hktvContentCatalog
+$sourceVersion=sourceVersion(catalog(id),version[default='Staged'])[unique=true];
+$targetVersion=targetVersion(catalog(id),version[default='Online'])[unique=true];
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+
+INSERT_UPDATE UserGroup;UID[unique=true]           ;name                      ;groups(uid)[mode=append]; allSearchRestrictions
+					   ;H0260006_store_admingroup ;H0260006_store_admingroup ;store_admingroup        ;H0260006_store_restr,H0260006_hktvproduct_restr, H0260006_street_restr, H0260006_cmsitem_restr,H0260006_hktvSearchQuery_restr,H0260006_imgMedia_restr,H0260006_hotsearchquery_restr,H0260006_syncjob_restr
+
+# Adding New Technical User
+INSERT_UPDATE User;UID[unique=true]        			;$setPassword ;description     				;name            			;groups(uid)                                  	;sessionLanguage(isocode) 	;businessUnit(code);allSearchRestrictions                      
+                  ;H0260006_store_admin_technical 	;             ;H0260006 technical admin 	;H0260006 technical admin 	;H0260006_store_admingroup,store_adminrole ;en 						; H0260006            ;H0260006_approved_hktvproduct_restr
+ 
+
+INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
+							   ;H0260006_store_restr                 ;H0260006 Store Restriction                  ;{code}='H0260006'         ;H0260006_store_admingroup    ;Store                 ;true    ;false
+							   ;H0260006_street_restr                ;H0260006 Street Restriction                 ;{pk}=	8796125842989          ;H0260006_store_admingroup    ;Street                ;true    ;false
+							   ;H0260006_hktvproduct_restr           ;H0260006 hktvproduct Restriction            ;{store}=	8796257472036        ;H0260006_store_admingroup    ;HktvProduct	          ;true    ;false
+							   ;H0260006_cmsitem_restr               ;H0260006 CMSItem Restriction                ;{businessUnit}=	8796257472036 ;H0260006_store_admingroup    ;CMSItem	   ;true    ;false
+			                   ;H0260006_hktvSearchQuery_restr       ;H0260006 HktvSearchQuery Restriction        ;{store}=	8796257472036        ;H0260006_store_admingroup    ;HktvSearchQuery	      ;true    ;false
+			                   ;H0260006_imgMedia_restr              ;H0260006 Media Restriction                  ;{businessUnit}=	8796257472036  ;H0260006_store_admingroup    ;HktvMedia	          ;true    ;false
+			                   ;H0260006_hotsearchquery_restr        ;H0260006 HotSearchQuery Restriction         ;{store}=	8796257472036        ;H0260006_store_admingroup    ;HotSearchQuery	      ;true    ;false											   
+               				   ;H0260006_syncjob_restr               ;H0260006 HKTVCatalogSyncJob Restriction      ;{code} LIKE 'H0260006_%CatalogSyncJob' ;H0260006_store_admingroup    ;CatalogVersionSyncJob     ;true    ;false							 
+							   ;H0260006_approved_hktvproduct_restr  ;H0260006 hktvproduct Restriction            ;{store}=	8796257472036 AND {approvalstatus} = ({{ select {pk} from {ArticleApprovalStatus} where {code} = 'approved'}})        ;H0260006_store_admin_technical    ;HktvProduct	          ;true    ;false
+
+INSERT_UPDATE Employee;UID[unique=true]      			;$setPassword ;description     				;name            			;groups(uid)                                                    ;sessionLanguage(isocode)  	;businessUnit(code)
+                      ;H0260006_store_admin 			;             ;H0260006 admin 				;H0260006 admin 			;H0260006_store_admingroup,store_adminrole,productmanagergroup ;en 						; H0260006
+                      
+
+
+# Adding New Custom Catalog Sync Job
+#INSERT_UPDATE HKTVCatalogSyncJob;code;$sourceVersion;$targetVersion;createNewItems;removeMissingItems;rootTypes(code)[mode=append]
+#								;H0260006_hktvProductCatalogSyncJob;$productCatalog:Staged;$productCatalog:Online;true;true;ContentBlock,Crossreference,Category,Product,Media,Keyword,PriceRow,TaxRow,DiscountRow,MediaContainer
+#								;H0260006_hktvContentCatalogSyncJob;$contentCatalog:Staged;$contentCatalog:Online;true;true;CMSItem,CMSRelation
+                  
+# create trigger
+INSERT_UPDATE Trigger;job(code)[unique=true];cronExpression
+#; H0260006_hktvProductCatalogSyncJob; 0 15 13 ? * SUN *
+#; H0260006_hktvContentCatalogSyncJob; 0 15 13 ? * SUN *
+
+
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$contentCatalog=hktvContentCatalog
+$contentCatalogName=hktv Content Catalog
+$productCatalog=hktvProductCatalog
+$productCatalogName=hktv Product Catalog
+
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$productCV=catalogVersion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+
+$image=image(code, $contentCV);
+$media=media(code, $contentCV);
+$page=page(uid, $contentCV);
+$contentPage=contentPage(uid, $contentCV);
+$siteResource=jar:hk.com.hktv.initialdata.setup.InitialDataSystemSetup&/hktvinitialdata/import/sampledata/productCatalogs/$productCatalog/images
+$productResource=jar:hk.com.hktv.initialdata.setup.InitialDataSystemSetup&/hktvinitialdata/import/productCatalogs/$productCatalog
+$jarResourceCms=jar:hk.com.hktv.initialdata.setup.InitialDataSystemSetup&/hktvinitialdata/import/cockpits/cmscockpit
+$picture=media(code, $contentCV);
+$faqCategoryImage=faqCategoryImage(code, $contentCV);
+$hktvContentCatalogData=jar:hk.com.hktv.initialdata.setup.InitialDataSystemSetup&/hktvinitialdata/import/sampledata/contentCatalogs/$contentCatalog/images
+$faqSupercategories=source(uid)[unique=true]
+$faqCategories=target(uid)[unique=true]
+$lang=en
+
+INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];title;name;masterTemplate(uid,$contentCV);label;businessUnit(code);defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false']
+;;H0260006_landingpage;H0260006 Store;H0260006 Store;LandingPage3Template;	Wenson-Development-Limited;H0260006
+
+                                                 
+INSERT_UPDATE StoreBannerListComponent;$contentCV[unique=true];uid[unique=true] ;name ;&componentRef;storeBannerList(&componentRef);businessUnit(code)
+	;;H0260006_PromotionBannersComponent ;Store Promotion Banners Component  ;H0260006_PromotionBannersComponent ;;H0260006
+
+INSERT_UPDATE HktvHotPickCmsComponent;$contentCV[unique=true];uid[unique=true];name;hotPickPageType(code);&componentRef;businessUnit(code)
+;;H0260006_HotpickComponent;Hot pick product component for StoreCode store page;STORE_HOT_PICK_PAGE;H0260006_HotpickComponent;H0260006
+
+INSERT_UPDATE RotatingImagesComponent ; $contentCV[unique=true]         ; uid[unique=true]             ; name                 ;banners(&componentRef) ; &componentRef;businessUnit(code)
+									  ;                                 ; H0260006_CarouselComponent  ; Hktv Store Carousel  ;                       ; H0260006_CarouselComponent;H0260006
+
+INSERT_UPDATE CMSLinkComponent	;$contentCV[unique=true]	;uid[unique=true]			;name				   		;url	;category(code, $productCV)	;&linkRef					;businessUnit(code)	;&componentRef			;target(code)[default='sameWindow'];linkName[lang=zh]
+								;						  	;H0260006_ApparelsCategoryLink 		;Apparels Category Link 	;		;apparels_11			   	;ApparelsCategoryLink		;H0260006       	;H0260006_ApparelsCategoryLink	;;Apparels
+								;						  	;H0260006WomenTopsCategoryLink 		        ;Women TopsCategory Link 	;		;Top_1121			;H0260006WomenTopsCategoryLink	;H0260006       	;H0260006WomenTopsCategoryLink	;; WomenTops								
+							    ;						  	;H0260006_SkinCareCategoryLink 		;Skin Care Category Link 	;		;SkinCare_121			   	;H0260006_SkinCareCategoryLink		;H0260006       	;H0260006_SkinCareCategoryLink	;;SkinCare
+								;				     		;H0260006_adidasOriginalsLink	    	;adidas Originals Link		;		;adidas						;H0260006_adidasOriginalsLink	    ;H0260006			;H0260006_adidasOriginalsLink	;;adidasOriginal
+								;							;H0260006_AlMerrickLink				;Al Merrick Link			;		;Al-Merrick					;H0260006_AlMerrickLink		        ;H0260006			;H0260006_AlMerrickLink			;;AlMerrick
+								;							;H0260006_AllStoreProductsLink		    ;Store Products Link		;/search?q=:relevance:street:main:store:H0260006;							;H0260006_AllStoreProductsLink		;H0260006				;H0260006_AllStoreProductsLink	;;All Products
+																
+INSERT_UPDATE HktvOverlayCMSNavigationNode		;uid[unique=true]						;$contentCV[unique=true];name									;parent(uid, $contentCV)				;&nodeRef								;businessUnit(code)		;url							;links(&linkRef)
+#											   ;StoreCategoryNavNode					;						;Store Node								;SiteRootNode							;StoreCategoryNavNode					;						;								;
+											   ;H0260006_BrandsNavNode					;						;All Brands								;StoreCategoryNavNode					;H0260006_BrandsNavNode				;H0260006				;/en/c/brands					;
+											   ;H0260006_AllBrandsNavNode				;						;Brand Links							;H0260006_BrandsNavNode				;H0260006_AllBrandsNavNode				;H0260006				;								;H0260006_adidasOriginalsLink,H0260006_AlMerrickLink
+											   
+INSERT_UPDATE HktvNavigationBarComponent;$contentCV[unique=true];uid[unique=true]					;name										;wrapAfter	;link(uid, $contentCV)		;styleClass			       ;navigationNode(&nodeRef)	;dropDownLayout(code)[default=AUTO]	;&componentRef 			   ;businessUnit(code)	;overlayRightAlign	;overlayBannerList(&componentRef)         
+									    ;						;H0260006_NavBarComponent			;H0260006 Nav Bar Component				;10			;ApparelsCategoryLink  		;nav-st-main nav-household ;H0260006_BrandsNavNode	;									;H0260006_NavBarComponent ;H0260006			;true				;											   
+
+INSERT_UPDATE ContentSlot ; $contentCV[unique=true]    ; uid[unique=true]    ; name  ; active ;businessUnit(code); cmsComponents(&componentRef)
+  ;; Section1Slot-H0260006   ; Section1 Slot for H0260006  ; true  ; H0260006;
+  ;; Section2ASlot-H0260006  ; Section2A Slot for H0260006 ; true  ; H0260006;H0260006_CarouselComponent
+  ;; NavigationBarSlot-H02600061;Navigation Bar Slot For H0260006;true;H0260006;H0260006_NavBarComponent,H0260006WomenTopsCategoryLink,H0260006_SkinCareCategoryLink,H0260006_AllStoreProductsLink
+  ;; Section3Slot-H0260006   ; Section3 Slot for H0260006 ; true    ; H0260006;H0260006_PromotionBannersComponent
+  ;; Section4Slot-H0260006   ; Section4 Slot for H0260006; true     ; H0260006;H0260006_HotpickComponent
+  ;; Section5Slot-H0260006  ; Section5 Slot for H0260006  ; true    ; H0260006;
+
+
+
+INSERT_UPDATE ContentSlotForPage; $contentCV[unique=true] ; uid[unique=true] ; position[unique=true] ; page(uid,$contentCV)[unique=true][default='H0260006_landingpage']; contentSlot(uid,$contentCV)[unique=true]
+;; Section1-H0260006  ; Section1  ;   ; Section1Slot-H0260006
+;; Section2A-H0260006 ;Section2A  ;   ; Section2ASlot-H0260006
+;; NavigationBar-H02600061  ;NavigationBar1  ;   ; NavigationBarSlot-H02600061
+;; Section3-H0260006  ;Section3   ;   ; Section3Slot-H0260006
+;; Section4-H0260006  ;Section4   ;   ; Section4Slot-H0260006
+;; Section5-H0260006  ;Section5   ;   ; Section5Slot-H0260006
+			   
+
+             
