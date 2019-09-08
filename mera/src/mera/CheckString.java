@@ -5,8 +5,6 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.commons.lang.StringUtils;
-
 public class CheckString {
 
 	public static void main(String[] args) {
@@ -17,7 +15,7 @@ public class CheckString {
 			tokens.add("123 woods h 123woods");
 			tokens.add("and meet you");
 
-			String patternString = "\\b(" + StringUtils.join(tokens, "|") + ")\\b";
+			String patternString = "\\b(" + String.join("|",tokens ) + ")\\b";
 			System.out.println("patternString..."+patternString);
 			Pattern pattern = Pattern.compile(patternString);
 			Matcher matcher = pattern.matcher(text);

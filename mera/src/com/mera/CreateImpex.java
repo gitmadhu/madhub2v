@@ -1,6 +1,8 @@
 
 package com.mera;
 
+import au.com.bytecode.opencsv.CSVReader;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -12,8 +14,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.Scanner;
-
-import au.com.bytecode.opencsv.CSVReader;
 
 public class CreateImpex {
 	

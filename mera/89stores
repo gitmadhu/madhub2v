@@ -1,30 +1,30 @@
 $passwordEncoding=md5
 $defaultPassword=1234
 $setPassword=@password[translator=de.hybris.platform.impex.jalo.translators.ConvertPlaintextToEncodedUserPasswordTranslator][default='$passwordEncoding:$defaultPassword']
-$productCatalog=hktvProductCatalog
-$contentCatalog=hktvContentCatalog
+$productCatalog=mbtvProductCatalog
+$contentCatalog=mbtvContentCatalog
 $sourceVersion=sourceVersion(catalog(id),version[default='Staged'])[unique=true];
 $targetVersion=targetVersion(catalog(id),version[default='Online'])[unique=true];
 $contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
 
 INSERT_UPDATE UserGroup;UID[unique=true]           ;name                      ;groups(uid)[mode=append]; allSearchRestrictions
-					   ;STORECODE_store_admingroup ;STORECODE_store_admingroup ;store_admingroup        ;STORECODE_store_restr,STORECODE_hktvproduct_restr, STORECODE_street_restr, STORECODE_cmsitem_restr,STORECODE_hktvSearchQuery_restr,STORECODE_imgMedia_restr,STORECODE_hotsearchquery_restr,STORECODE_syncjob_restr
+					   ;STORECODE_store_admingroup ;STORECODE_store_admingroup ;store_admingroup        ;STORECODE_store_restr,STORECODE_mbtvproduct_restr, STORECODE_street_restr, STORECODE_cmsitem_restr,STORECODE_mbtvSearchQuery_restr,STORECODE_imgMedia_restr,STORECODE_hotsearchquery_restr,STORECODE_syncjob_restr
 
 # Adding New Technical User
 INSERT_UPDATE User;UID[unique=true]        			;$setPassword ;description     				;name            			;groups(uid)                                  	;sessionLanguage(isocode) 	;businessUnit(code);allSearchRestrictions                      
-                  ;STORECODE_store_admin_technical 	;             ;STORECODE technical admin 	;STORECODE technical admin 	;STORECODE_store_admingroup,store_adminrole ;en 						; STORECODE            ;STORECODE_approved_hktvproduct_restr
+                  ;STORECODE_store_admin_technical 	;             ;STORECODE technical admin 	;STORECODE technical admin 	;STORECODE_store_admingroup,store_adminrole ;en 						; STORECODE            ;STORECODE_approved_mbtvproduct_restr
  
 
 INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
 							   ;STORECODE_store_restr                 ;STORECODE Store Restriction                  ;{code}='STORECODE'         ;STORECODE_store_admingroup    ;Store                 ;true    ;false
 							   ;STORECODE_street_restr                ;STORECODE Street Restriction                 ;{pk}=STREETPKCODE          ;STORECODE_store_admingroup    ;Street                ;true    ;false
-							   ;STORECODE_hktvproduct_restr           ;STORECODE hktvproduct Restriction            ;{store}=STOREPKCODE        ;STORECODE_store_admingroup    ;HktvProduct	          ;true    ;false
+							   ;STORECODE_mbtvproduct_restr           ;STORECODE mbtvproduct Restriction            ;{store}=STOREPKCODE        ;STORECODE_store_admingroup    ;HktvProduct	          ;true    ;false
 							   ;STORECODE_cmsitem_restr               ;STORECODE CMSItem Restriction                ;{businessUnit}=STOREPKCODE ;STORECODE_store_admingroup    ;CMSItem	   ;true    ;false
-			                   ;STORECODE_hktvSearchQuery_restr       ;STORECODE HktvSearchQuery Restriction        ;{store}=STOREPKCODE        ;STORECODE_store_admingroup    ;HktvSearchQuery	      ;true    ;false
+			                   ;STORECODE_mbtvSearchQuery_restr       ;STORECODE HktvSearchQuery Restriction        ;{store}=STOREPKCODE        ;STORECODE_store_admingroup    ;HktvSearchQuery	      ;true    ;false
 			                   ;STORECODE_imgMedia_restr              ;STORECODE Media Restriction                  ;{businessUnit}=STOREPKCODE  ;STORECODE_store_admingroup    ;HktvMedia	          ;true    ;false
 			                   ;STORECODE_hotsearchquery_restr        ;STORECODE HotSearchQuery Restriction         ;{store}=STOREPKCODE        ;STORECODE_store_admingroup    ;HotSearchQuery	      ;true    ;false											   
                				   ;STORECODE_syncjob_restr               ;STORECODE HKTVCatalogSyncJob Restriction      ;{code} LIKE 'STORECODE_%CatalogSyncJob' ;STORECODE_store_admingroup    ;CatalogVersionSyncJob     ;true    ;false							 
-							   ;STORECODE_approved_hktvproduct_restr  ;STORECODE hktvproduct Restriction            ;{store}=STOREPKCODE AND {approvalstatus} = ({{ select {pk} from {ArticleApprovalStatus} where {code} = 'approved'}})        ;STORECODE_store_admin_technical    ;HktvProduct	          ;true    ;false
+							   ;STORECODE_approved_mbtvproduct_restr  ;STORECODE mbtvproduct Restriction            ;{store}=STOREPKCODE AND {approvalstatus} = ({{ select {pk} from {ArticleApprovalStatus} where {code} = 'approved'}})        ;STORECODE_store_admin_technical    ;HktvProduct	          ;true    ;false
 
 INSERT_UPDATE Employee;UID[unique=true]      			;$setPassword ;description     				;name            			;groups(uid)                                                    ;sessionLanguage(isocode)  	;businessUnit(code)
                       ;STORECODE_store_admin 			;             ;STORECODE admin 				;STORECODE admin 			;STORECODE_store_admingroup,store_adminrole,productmanagergroup ;en 						; STORECODE
@@ -35,22 +35,22 @@ INSERT_UPDATE ContentPage;$contentCV[unique=true]	;uid[unique=true]		;title     
 
 # Adding New Custom Catalog Sync Job
 #INSERT_UPDATE HKTVCatalogSyncJob;code;$sourceVersion;$targetVersion;createNewItems;removeMissingItems;rootTypes(code)[mode=append]
-#								;STORECODE_hktvProductCatalogSyncJob;$productCatalog:Staged;$productCatalog:Online;true;true;ContentBlock,Crossreference,Category,Product,Media,Keyword,PriceRow,TaxRow,DiscountRow,MediaContainer
-#								;STORECODE_hktvContentCatalogSyncJob;$contentCatalog:Staged;$contentCatalog:Online;true;true;CMSItem,CMSRelation
+#								;STORECODE_mbtvProductCatalogSyncJob;$productCatalog:Staged;$productCatalog:Online;true;true;ContentBlock,Crossreference,Category,Product,Media,Keyword,PriceRow,TaxRow,DiscountRow,MediaContainer
+#								;STORECODE_mbtvContentCatalogSyncJob;$contentCatalog:Staged;$contentCatalog:Online;true;true;CMSItem,CMSRelation
                   
 # create trigger
 INSERT_UPDATE Trigger;job(code)[unique=true];cronExpression
-#; STORECODE_hktvProductCatalogSyncJob; 0 15 13 ? * SUN *
-#; STORECODE_hktvContentCatalogSyncJob; 0 15 13 ? * SUN *
+#; STORECODE_mbtvProductCatalogSyncJob; 0 15 13 ? * SUN *
+#; STORECODE_mbtvContentCatalogSyncJob; 0 15 13 ? * SUN *
 
 
 # ImpEx for Importing CMS Content
 
 # Macros / Replacement Parameter definitions
-$contentCatalog=hktvContentCatalog
-$contentCatalogName=hktv Content Catalog
-$productCatalog=hktvProductCatalog
-$productCatalogName=hktv Product Catalog
+$contentCatalog=mbtvContentCatalog
+$contentCatalogName=mbtv Content Catalog
+$productCatalog=mbtvProductCatalog
+$productCatalogName=mbtv Product Catalog
 
 $contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
 $productCV=catalogVersion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
@@ -60,12 +60,12 @@ $image=image(code, $contentCV);
 $media=media(code, $contentCV);
 $page=page(uid, $contentCV);
 $contentPage=contentPage(uid, $contentCV);
-$siteResource=jar:hk.com.hktv.initialdata.setup.InitialDataSystemSetup&/hktvinitialdata/import/sampledata/productCatalogs/$productCatalog/images
-$productResource=jar:hk.com.hktv.initialdata.setup.InitialDataSystemSetup&/hktvinitialdata/import/productCatalogs/$productCatalog
-$jarResourceCms=jar:hk.com.hktv.initialdata.setup.InitialDataSystemSetup&/hktvinitialdata/import/cockpits/cmscockpit
+$siteResource=jar:in.com.mbtv.initialdata.setup.InitialDataSystemSetup&/mbtvinitialdata/import/sampledata/productCatalogs/$productCatalog/images
+$productResource=jar:in.com.mbtv.initialdata.setup.InitialDataSystemSetup&/mbtvinitialdata/import/productCatalogs/$productCatalog
+$jarResourceCms=jar:in.com.mbtv.initialdata.setup.InitialDataSystemSetup&/mbtvinitialdata/import/cockpits/cmscockpit
 $picture=media(code, $contentCV);
 $faqCategoryImage=faqCategoryImage(code, $contentCV);
-$hktvContentCatalogData=jar:hk.com.hktv.initialdata.setup.InitialDataSystemSetup&/hktvinitialdata/import/sampledata/contentCatalogs/$contentCatalog/images
+$mbtvContentCatalogData=jar:in.com.mbtv.initialdata.setup.InitialDataSystemSetup&/mbtvinitialdata/import/sampledata/contentCatalogs/$contentCatalog/images
 $faqSupercategories=source(uid)[unique=true]
 $faqCategories=target(uid)[unique=true]
 $lang=en
