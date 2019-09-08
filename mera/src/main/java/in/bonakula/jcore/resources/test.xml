@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Here are some of mine favourites</comment>
+<entry key="favouriteSeason">Winter</entry>
+<entry key="favouriteFruit">Apple</entry>
+<entry key="favouriteDay">Sunday</entry>
+
+</properties>
