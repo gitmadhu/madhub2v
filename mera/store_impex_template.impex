@@ -1,156 +1,54 @@
 $passwordEncoding=md5
 $defaultPassword=1234
 $setPassword=@password[translator=de.hybris.platform.impex.jalo.translators.ConvertPlaintextToEncodedUserPasswordTranslator][default='$passwordEncoding:$defaultPassword']
-$productCatalog=hktvProductCatalog
-$contentCatalog=hktvContentCatalog
+$productCatalog=mbtvProductCatalog
+$contentCatalog=mbtvContentCatalog
 $sourceVersion=sourceVersion(catalog(id),version[default='Staged'])[unique=true];
 $targetVersion=targetVersion(catalog(id),version[default='Online'])[unique=true];
 $contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
 
 INSERT_UPDATE UserGroup;UID[unique=true]           ;name                      ;groups(uid)[mode=append]; allSearchRestrictions
-					   ;STORECODE_store_admingroup ;STORECODE_store_admingroup ;store_admingroup        ;STORECODE_store_restr,STORECODE_hktvproduct_restr, STORECODE_street_restr, STORECODE_cmsitem_restr,STORECODE_hktvSearchQuery_restr,STORECODE_imgMedia_restr,STORECODE_hotsearchquery_restr,STORECODE_syncjob_restr
+					   ;STORECODE_store_admingroup ;STORECODE_store_admingroup ;store_admingroup        ;STORECODE_store_restr,STORECODE_mbtvproduct_restr, STORECODE_street_restr, STORECODE_cmsitem_restr,STORECODE_mbtvSearchQuery_restr,STORECODE_imgMedia_restr,STORECODE_hotsearchquery_restr,STORECODE_syncjob_restr
 
 # Adding New Technical User
 INSERT_UPDATE User;UID[unique=true]        			;$setPassword ;description     				;name            			;groups(uid)                                  	;sessionLanguage(isocode) 	;businessUnit(code);allSearchRestrictions                      
-                  ;STORECODE_store_admin_technical 	;             ;STORECODE technical admin 	;STORECODE technical admin 	;STORECODE_store_admingroup,store_adminrole ;en 						; STORECODE            ;STORECODE_approved_hktvproduct_restr
+                  ;STORECODE_store_admin_technical 	;             ;STORECODE technical admin 	;STORECODE technical admin 	;STORECODE_store_admingroup,store_adminrole ;en 						; STORECODE            ;STORECODE_approved_mbtvproduct_restr
  
 
 INSERT_UPDATE SearchRestriction;code[unique=true]                     ;name[lang=en]		                        ;query                      ;principal(UID)                ;restrictedType(code)  ;active  ;generate
 							   ;STORECODE_store_restr                 ;STORECODE Store Restriction                  ;{code}='STORECODE'         ;STORECODE_store_admingroup    ;Store                 ;true    ;false
 							   ;STORECODE_street_restr                ;STORECODE Street Restriction                 ;{pk}=STREETPKCODE          ;STORECODE_store_admingroup    ;Street                ;true    ;false
-							   ;STORECODE_hktvproduct_restr           ;STORECODE hktvproduct Restriction            ;{store}=STOREPKCODE        ;STORECODE_store_admingroup    ;HktvProduct	          ;true    ;false
-<<<<<<< HEAD
+							   ;STORECODE_mbtvproduct_restr           ;STORECODE mbtvproduct Restriction            ;{store}=STOREPKCODE        ;STORECODE_store_admingroup    ;MbtvProduct	          ;true    ;false
+							   ;STORECODE_mbtvvariantproduct_restr    ;STORECODE mbtvvariantproduct Restriction     ;{store}=STOREPKCODE        ;STORECODE_store_admingroup    ;MbtvVariantProduct	  ;true    ;false							   
 							   ;STORECODE_cmsitem_restr               ;STORECODE CMSItem Restriction                ;{businessUnit}=STOREPKCODE ;STORECODE_store_admingroup    ;CMSItem	   ;true    ;false
-			                   ;STORECODE_hktvSearchQuery_restr       ;STORECODE HktvSearchQuery Restriction        ;{store}=STOREPKCODE        ;STORECODE_store_admingroup    ;HktvSearchQuery	      ;true    ;false
-			                   ;STORECODE_imgMedia_restr              ;STORECODE Media Restriction                  ;{businessUnit}=STOREPKCODE  ;STORECODE_store_admingroup    ;HktvMedia	          ;true    ;false
+			                   ;STORECODE_mbtvSearchQuery_restr       ;STORECODE MbtvSearchQuery Restriction        ;{store}=STOREPKCODE        ;STORECODE_store_admingroup    ;MbtvSearchQuery	      ;true    ;false
+			                   ;STORECODE_imgMedia_restr              ;STORECODE Media Restriction                  ;{businessUnit}=STOREPKCODE  ;STORECODE_store_admingroup    ;MbtvMedia	          ;true    ;false
 			                   ;STORECODE_hotsearchquery_restr        ;STORECODE HotSearchQuery Restriction         ;{store}=STOREPKCODE        ;STORECODE_store_admingroup    ;HotSearchQuery	      ;true    ;false											   
-               				   ;STORECODE_syncjob_restr               ;STORECODE HKTVCatalogSyncJob Restriction      ;{code} LIKE 'STORECODE_%CatalogSyncJob' ;STORECODE_store_admingroup    ;CatalogVersionSyncJob     ;true    ;false							 
-							   ;STORECODE_approved_hktvproduct_restr  ;STORECODE hktvproduct Restriction            ;{store}=STOREPKCODE AND {approvalstatus} = ({{ select {pk} from {ArticleApprovalStatus} where {code} = 'approved'}})        ;STORECODE_store_admin_technical    ;HktvProduct	          ;true    ;false
-
-INSERT_UPDATE Employee;UID[unique=true]      			;$setPassword ;description     				;name            			;groups(uid)                                                    ;sessionLanguage(isocode)  	;businessUnit(code)
-                      ;STORECODE_store_admin 			;             ;STORECODE admin 				;STORECODE admin 			;STORECODE_store_admingroup,store_adminrole,productmanagergroup ;en 						; STORECODE
-                      
-
-INSERT_UPDATE ContentPage;$contentCV[unique=true]	;uid[unique=true]		;title     ;name	       ;masterTemplate(uid,$contentCV);label;businessUnit(code);defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false']
-						 ;							;STORECODE_landingpage  ;STORECODE ;STORECODE store;LandingPage3Template		   ;STORECODE_storePage3;STORECODE
-
-# Adding New Custom Catalog Sync Job
-#INSERT_UPDATE HKTVCatalogSyncJob;code;$sourceVersion;$targetVersion;createNewItems;removeMissingItems;rootTypes(code)[mode=append]
-#								;STORECODE_hktvProductCatalogSyncJob;$productCatalog:Staged;$productCatalog:Online;true;true;ContentBlock,Crossreference,Category,Product,Media,Keyword,PriceRow,TaxRow,DiscountRow,MediaContainer
-#								;STORECODE_hktvContentCatalogSyncJob;$contentCatalog:Staged;$contentCatalog:Online;true;true;CMSItem,CMSRelation
-                  
-# create trigger
-INSERT_UPDATE Trigger;job(code)[unique=true];cronExpression
-#; STORECODE_hktvProductCatalogSyncJob; 0 15 13 ? * SUN *
-#; STORECODE_hktvContentCatalogSyncJob; 0 15 13 ? * SUN *
-
-
-# ImpEx for Importing CMS Content
-
-# Macros / Replacement Parameter definitions
-$contentCatalog=hktvContentCatalog
-$contentCatalogName=hktv Content Catalog
-$productCatalog=hktvProductCatalog
-$productCatalogName=hktv Product Catalog
-
-$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
-$productCV=catalogVersion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
-$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
-
-$image=image(code, $contentCV);
-$media=media(code, $contentCV);
-$page=page(uid, $contentCV);
-$contentPage=contentPage(uid, $contentCV);
-$siteResource=jar:hk.com.hktv.initialdata.setup.InitialDataSystemSetup&/hktvinitialdata/import/sampledata/productCatalogs/$productCatalog/images
-$productResource=jar:hk.com.hktv.initialdata.setup.InitialDataSystemSetup&/hktvinitialdata/import/productCatalogs/$productCatalog
-$jarResourceCms=jar:hk.com.hktv.initialdata.setup.InitialDataSystemSetup&/hktvinitialdata/import/cockpits/cmscockpit
-$picture=media(code, $contentCV);
-$faqCategoryImage=faqCategoryImage(code, $contentCV);
-$hktvContentCatalogData=jar:hk.com.hktv.initialdata.setup.InitialDataSystemSetup&/hktvinitialdata/import/sampledata/contentCatalogs/$contentCatalog/images
-$faqSupercategories=source(uid)[unique=true]
-$faqCategories=target(uid)[unique=true]
-$lang=en
-
-INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];title;name;masterTemplate(uid,$contentCV);label;businessUnit(code);defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false']
-;;STORECODE_landingpage;STORECODE Store;STORECODE Store;LandingPage3Template;STOREPAGELABEL;STORECODE
-
-                                                 
-INSERT_UPDATE StoreBannerListComponent;$contentCV[unique=true];uid[unique=true] ;name ;&componentRef;storeBannerList(&componentRef);businessUnit(code)
-	;;STORECODE_PromotionBannersComponent ;Store Promotion Banners Component  ;STORECODE_PromotionBannersComponent ;;STORECODE
-
-INSERT_UPDATE HktvHotPickCmsComponent;$contentCV[unique=true];uid[unique=true];name;hotPickPageType(code);&componentRef;businessUnit(code)
-;;STORECODE_HotpickComponent;Hot pick product component for StoreCode store page;STORE_HOT_PICK_PAGE;STORECODE_HotpickComponent;STORECODE
-
-INSERT_UPDATE RotatingImagesComponent ; $contentCV[unique=true]         ; uid[unique=true]             ; name                 ;banners(&componentRef) ; &componentRef;businessUnit(code)
-									  ;                                 ; STORECODE_CarouselComponent  ; Hktv Store Carousel  ;                       ; STORECODE_CarouselComponent;STORECODE
-
-INSERT_UPDATE CMSLinkComponent	;$contentCV[unique=true]	;uid[unique=true]			;name				   		;url	;category(code, $productCV)	;&linkRef					;businessUnit(code)	;&componentRef			;target(code)[default='sameWindow'];linkName[lang=zh]
-								;						  	;STORECODE_ApparelsCategoryLink 		;Apparels Category Link 	;		;apparels_11			   	;ApparelsCategoryLink		;STORECODE       	;STORECODE_ApparelsCategoryLink	;;Apparels
-								;						  	;STORECODEWomenTopsCategoryLink 		        ;Women TopsCategory Link 	;		;Top_1121			;STORECODEWomenTopsCategoryLink	;STORECODE       	;STORECODEWomenTopsCategoryLink	;; WomenTops								
-							    ;						  	;STORECODE_SkinCareCategoryLink 		;Skin Care Category Link 	;		;SkinCare_121			   	;STORECODE_SkinCareCategoryLink		;STORECODE       	;STORECODE_SkinCareCategoryLink	;;SkinCare
-								;				     		;STORECODE_adidasOriginalsLink	    	;adidas Originals Link		;		;adidas						;STORECODE_adidasOriginalsLink	    ;STORECODE			;STORECODE_adidasOriginalsLink	;;adidasOriginal
-								;							;STORECODE_AlMerrickLink				;Al Merrick Link			;		;Al-Merrick					;STORECODE_AlMerrickLink		        ;STORECODE			;STORECODE_AlMerrickLink			;;AlMerrick
-								;							;STORECODE_AllStoreProductsLink		    ;Store Products Link		;/search?q=:relevance:street:STREETCODE:store:STORECODE;							;STORECODE_AllStoreProductsLink		;STORECODE				;STORECODE_AllStoreProductsLink	;;All Products
-																
-INSERT_UPDATE HktvOverlayCMSNavigationNode		;uid[unique=true]						;$contentCV[unique=true];name									;parent(uid, $contentCV)				;&nodeRef								;businessUnit(code)		;url							;links(&linkRef)
-#											   ;StoreCategoryNavNode					;						;Store Node								;SiteRootNode							;StoreCategoryNavNode					;						;								;
-											   ;STORECODE_BrandsNavNode					;						;All Brands								;StoreCategoryNavNode					;STORECODE_BrandsNavNode				;STORECODE				;/en/c/brands					;
-											   ;STORECODE_AllBrandsNavNode				;						;Brand Links							;STORECODE_BrandsNavNode				;STORECODE_AllBrandsNavNode				;STORECODE				;								;STORECODE_adidasOriginalsLink,STORECODE_AlMerrickLink
-											   
-INSERT_UPDATE HktvNavigationBarComponent;$contentCV[unique=true];uid[unique=true]					;name										;wrapAfter	;link(uid, $contentCV)		;styleClass			       ;navigationNode(&nodeRef)	;dropDownLayout(code)[default=AUTO]	;&componentRef 			   ;businessUnit(code)	;overlayRightAlign	;overlayBannerList(&componentRef)         
-									    ;						;STORECODE_NavBarComponent			;STORECODE Nav Bar Component				;10			;ApparelsCategoryLink  		;nav-st-main nav-household ;STORECODE_BrandsNavNode	;									;STORECODE_NavBarComponent ;STORECODE			;true				;											   
-
-INSERT_UPDATE ContentSlot ; $contentCV[unique=true]    ; uid[unique=true]    ; name  ; active ;businessUnit(code); cmsComponents(&componentRef)
-  ;; Section1Slot-STORECODE   ; Section1 Slot for STORECODE  ; true  ; STORECODE;
-  ;; Section2ASlot-STORECODE  ; Section2A Slot for STORECODE ; true  ; STORECODE;STORECODE_CarouselComponent
-  ;; NavigationBarSlot-STORECODE1;Navigation Bar Slot For STORECODE;true;STORECODE;STORECODE_NavBarComponent,STORECODEWomenTopsCategoryLink,STORECODE_SkinCareCategoryLink,STORECODE_AllStoreProductsLink
-  ;; Section3Slot-STORECODE   ; Section3 Slot for STORECODE ; true    ; STORECODE;STORECODE_PromotionBannersComponent
-  ;; Section4Slot-STORECODE   ; Section4 Slot for STORECODE; true     ; STORECODE;STORECODE_HotpickComponent
-  ;; Section5Slot-STORECODE  ; Section5 Slot for STORECODE  ; true    ; STORECODE;
-
-
-
-INSERT_UPDATE ContentSlotForPage; $contentCV[unique=true] ; uid[unique=true] ; position[unique=true] ; page(uid,$contentCV)[unique=true][default='STORECODE_landingpage']; contentSlot(uid,$contentCV)[unique=true]
-;; Section1-STORECODE  ; Section1  ;   ; Section1Slot-STORECODE
-;; Section2A-STORECODE ;Section2A  ;   ; Section2ASlot-STORECODE
-;; NavigationBar-STORECODE1  ;NavigationBar1  ;   ; NavigationBarSlot-STORECODE1
-;; Section3-STORECODE  ;Section3   ;   ; Section3Slot-STORECODE
-;; Section4-STORECODE  ;Section4   ;   ; Section4Slot-STORECODE
-;; Section5-STORECODE  ;Section5   ;   ; Section5Slot-STORECODE
-			   
-
-             
-=======
-							   ;STORECODE_hktvvariantproduct_restr    ;STORECODE hktvvariantproduct Restriction     ;{store}=STOREPKCODE        ;STORECODE_store_admingroup    ;HktvVariantProduct	  ;true    ;false							   
-							   ;STORECODE_cmsitem_restr               ;STORECODE CMSItem Restriction                ;{businessUnit}=STOREPKCODE ;STORECODE_store_admingroup    ;CMSItem	   ;true    ;false
-			                   ;STORECODE_hktvSearchQuery_restr       ;STORECODE HktvSearchQuery Restriction        ;{store}=STOREPKCODE        ;STORECODE_store_admingroup    ;HktvSearchQuery	      ;true    ;false
-			                   ;STORECODE_imgMedia_restr              ;STORECODE Media Restriction                  ;{businessUnit}=STOREPKCODE  ;STORECODE_store_admingroup    ;HktvMedia	          ;true    ;false
-			                   ;STORECODE_hotsearchquery_restr        ;STORECODE HotSearchQuery Restriction         ;{store}=STOREPKCODE        ;STORECODE_store_admingroup    ;HotSearchQuery	      ;true    ;false											   
-               				   ;STORECODE_syncjob_restr               ;STORECODE HKTVCatalogSyncJob Restriction      ;{code} LIKE 'STORECODE_%CatalogSyncJob' ;STORECODE_store_admingroup    ;CatalogVersionSyncJob     ;true    ;false							 
-							   ;STORECODE_approved_hktvproduct_restr  ;STORECODE hktvproduct Restriction            ;{store}=STOREPKCODE AND {approvalstatus} = ({{ select {pk} from {ArticleApprovalStatus} where {code} = 'approved'}})        ;STORECODE_store_admin_technical    ;HktvProduct	          ;true    ;false
+               				   ;STORECODE_syncjob_restr               ;STORECODE MBTVCatalogSyncJob Restriction      ;{code} LIKE 'STORECODE_%CatalogSyncJob' ;STORECODE_store_admingroup    ;CatalogVersionSyncJob     ;true    ;false							 
+							   ;STORECODE_approved_mbtvproduct_restr  ;STORECODE mbtvproduct Restriction            ;{store}=STOREPKCODE AND {approvalstatus} = ({{ select {pk} from {ArticleApprovalStatus} where {code} = 'approved'}})        ;STORECODE_store_admin_technical    ;MbtvProduct	          ;true    ;false
 
 INSERT_UPDATE Employee;UID[unique=true]      			;$setPassword ;description     				;name            			;groups(uid)                                                    ;sessionLanguage(isocode)  	;businessUnit(code)
                       ;STORECODE_store_admin 			;             ;STORECODE admin 				;STORECODE admin 			;STORECODE_store_admingroup,store_adminrole,productmanagergroup,storeproductmanagergroup, ;en 						; STORECODE
                       
 
 # Adding New Custom Catalog Sync Job
-#INSERT_UPDATE HKTVCatalogSyncJob;code;$sourceVersion;$targetVersion;createNewItems;removeMissingItems;rootTypes(code)[mode=append]
-#								;STORECODE_hktvProductCatalogSyncJob;$productCatalog:Staged;$productCatalog:Online;true;true;ContentBlock,Crossreference,Category,Product,Media,Keyword,PriceRow,TaxRow,DiscountRow,MediaContainer
-#								;STORECODE_hktvContentCatalogSyncJob;$contentCatalog:Staged;$contentCatalog:Online;true;true;CMSItem,CMSRelation
+#INSERT_UPDATE MBTVCatalogSyncJob;code;$sourceVersion;$targetVersion;createNewItems;removeMissingItems;rootTypes(code)[mode=append]
+#								;STORECODE_mbtvProductCatalogSyncJob;$productCatalog:Staged;$productCatalog:Online;true;true;ContentBlock,Crossreference,Category,Product,Media,Keyword,PriceRow,TaxRow,DiscountRow,MediaContainer
+#								;STORECODE_mbtvContentCatalogSyncJob;$contentCatalog:Staged;$contentCatalog:Online;true;true;CMSItem,CMSRelation
                   
 # create trigger
 #INSERT_UPDATE Trigger;job(code)[unique=true];cronExpression
-#; STORECODE_hktvProductCatalogSyncJob; 0 15 13 ? * SUN *
-#; STORECODE_hktvContentCatalogSyncJob; 0 15 13 ? * SUN *
+#; STORECODE_mbtvProductCatalogSyncJob; 0 15 13 ? * SUN *
+#; STORECODE_mbtvContentCatalogSyncJob; 0 15 13 ? * SUN *
 
 
 # ImpEx for Importing CMS Content
 
 # Macros / Replacement Parameter definitions
-$contentCatalog=hktvContentCatalog
-$contentCatalogName=hktv Content Catalog
-$productCatalog=hktvProductCatalog
-$productCatalogName=hktv Product Catalog
+$contentCatalog=mbtvContentCatalog
+$contentCatalogName=mbtv Content Catalog
+$productCatalog=mbtvProductCatalog
+$productCatalogName=mbtv Product Catalog
 
 $contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
 $productCV=catalogVersion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
@@ -160,12 +58,12 @@ $image=image(code, $contentCV);
 $media=media(code, $contentCV);
 $page=page(uid, $contentCV);
 $contentPage=contentPage(uid, $contentCV);
-$siteResource=jar:hk.com.hktv.initialdata.setup.InitialDataSystemSetup&/hktvinitialdata/import/sampledata/productCatalogs/$productCatalog/images
-$productResource=jar:hk.com.hktv.initialdata.setup.InitialDataSystemSetup&/hktvinitialdata/import/productCatalogs/$productCatalog
-$jarResourceCms=jar:hk.com.hktv.initialdata.setup.InitialDataSystemSetup&/hktvinitialdata/import/cockpits/cmscockpit
+$siteResource=jar:hk.com.mbtv.initialdata.setup.InitialDataSystemSetup&/mbtvinitialdata/import/sampledata/productCatalogs/$productCatalog/images
+$productResource=jar:hk.com.mbtv.initialdata.setup.InitialDataSystemSetup&/mbtvinitialdata/import/productCatalogs/$productCatalog
+$jarResourceCms=jar:hk.com.mbtv.initialdata.setup.InitialDataSystemSetup&/mbtvinitialdata/import/cockpits/cmscockpit
 $picture=media(code, $contentCV);
 $faqCategoryImage=faqCategoryImage(code, $contentCV);
-$hktvContentCatalogData=jar:hk.com.hktv.initialdata.setup.InitialDataSystemSetup&/hktvinitialdata/import/sampledata/contentCatalogs/$contentCatalog/images
+$mbtvContentCatalogData=jar:hk.com.mbtv.initialdata.setup.InitialDataSystemSetup&/mbtvinitialdata/import/sampledata/contentCatalogs/$contentCatalog/images
 $faqSupercategories=source(uid)[unique=true]
 $faqCategories=target(uid)[unique=true]
 $lang=en
@@ -177,11 +75,11 @@ INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];title;name;ma
 INSERT_UPDATE StoreBannerListComponent;$contentCV[unique=true];uid[unique=true] ;name ;&componentRef;storeBannerList(&componentRef);businessUnit(code)
 	;;STORECODE_PromotionBannersComponent ;Store Promotion Banners Component  ;STORECODE_PromotionBannersComponent ;;STORECODE
 
-INSERT_UPDATE HktvHotPickCmsComponent;$contentCV[unique=true];uid[unique=true];name;hotPickPageType(code);&componentRef;businessUnit(code)
+INSERT_UPDATE MbtvHotPickCmsComponent;$contentCV[unique=true];uid[unique=true];name;hotPickPageType(code);&componentRef;businessUnit(code)
 ;;STORECODE_HotpickComponent;Hot pick product component for StoreCode store page;STORE_HOT_PICK_PAGE;STORECODE_HotpickComponent;STORECODE
 
 INSERT_UPDATE RotatingImagesComponent ; $contentCV[unique=true]         ; uid[unique=true]             ; name                 ;banners(&componentRef) ; &componentRef;businessUnit(code)
-									  ;                                 ; STORECODE_CarouselComponent  ; Hktv Store Carousel  ;                       ; STORECODE_CarouselComponent;STORECODE
+									  ;                                 ; STORECODE_CarouselComponent  ; Mbtv Store Carousel  ;                       ; STORECODE_CarouselComponent;STORECODE
 
 INSERT_UPDATE CMSLinkComponent	;$contentCV[unique=true]	;uid[unique=true]			;name				   		;url	;category(code, $productCV)	;&linkRef					;businessUnit(code)	;&componentRef			;target(code)[default='sameWindow'];linkName[lang=zh] ;linkName[lang=en]
 								;						  	;STORECODE_ApparelsCategoryLink 		;Apparels Category Link 	;		;apparels_11			   	;ApparelsCategoryLink		;STORECODE       	;STORECODE_ApparelsCategoryLink	;;Apparels ;Apparels 
@@ -191,12 +89,12 @@ INSERT_UPDATE CMSLinkComponent	;$contentCV[unique=true]	;uid[unique=true]			;nam
 								;							;STORECODE_AlMerrickLink				;Al Merrick Link			;		;Al-Merrick					;STORECODE_AlMerrickLink		        ;STORECODE			;STORECODE_AlMerrickLink			;;AlMerrick ;AlMerrick
 								;							;STORECODE_AllStoreProductsLink		    ;Store Products Link		;/search?q=:relevance:street:STREETCODE:store:STORECODE;							;STORECODE_AllStoreProductsLink		;STORECODE				;STORECODE_AllStoreProductsLink	;;All Products ;All Products
 																
-INSERT_UPDATE HktvOverlayCMSNavigationNode		;uid[unique=true]						;$contentCV[unique=true];name									;parent(uid, $contentCV)				;&nodeRef								;businessUnit(code)		;url							;links(&linkRef)
+INSERT_UPDATE MbtvOverlayCMSNavigationNode		;uid[unique=true]						;$contentCV[unique=true];name									;parent(uid, $contentCV)				;&nodeRef								;businessUnit(code)		;url							;links(&linkRef)
 #											   ;StoreCategoryNavNode					;						;Store Node								;SiteRootNode							;StoreCategoryNavNode					;						;								;
 											   ;STORECODE_BrandsNavNode					;						;All Brands								;StoreCategoryNavNode					;STORECODE_BrandsNavNode				;STORECODE				;/en/c/brands					;
 											   ;STORECODE_AllBrandsNavNode				;						;Brand Links							;STORECODE_BrandsNavNode				;STORECODE_AllBrandsNavNode				;STORECODE				;								;STORECODE_adidasOriginalsLink,STORECODE_AlMerrickLink
 											   
-INSERT_UPDATE HktvNavigationBarComponent;$contentCV[unique=true];uid[unique=true]					;name										;wrapAfter	;link(uid, $contentCV)		;styleClass			       ;navigationNode(&nodeRef)	;dropDownLayout(code)[default=AUTO]	;&componentRef 			   ;businessUnit(code)	;overlayRightAlign	;overlayBannerList(&componentRef)         
+INSERT_UPDATE MbtvNavigationBarComponent;$contentCV[unique=true];uid[unique=true]					;name										;wrapAfter	;link(uid, $contentCV)		;styleClass			       ;navigationNode(&nodeRef)	;dropDownLayout(code)[default=AUTO]	;&componentRef 			   ;businessUnit(code)	;overlayRightAlign	;overlayBannerList(&componentRef)         
 									    ;						;STORECODE_NavBarComponent			;STORECODE Nav Bar Component				;10			;ApparelsCategoryLink  		;nav-st-main nav-household ;STORECODE_BrandsNavNode	;									;STORECODE_NavBarComponent ;STORECODE			;true				;											   
 
 INSERT_UPDATE ContentSlot ; $contentCV[unique=true]    ; uid[unique=true]    ; name  ; active ;businessUnit(code); cmsComponents(&componentRef)
@@ -224,8 +122,8 @@ INSERT_UPDATE ContentSlotForPage; $contentCV[unique=true] ; uid[unique=true] ; p
 # Please make sure MobileLandingPage3Template exisits, which should be added 	  #
 # before excecuting inserting page. 									 		  #
 # The MobileLandingPage3Template would be insert by								  #
-# ext-hktv\hktvinitialdata\resources\impex\essentialdataCMS-mobile-storepage.impex#               
-# HKTV AD team Vincent Lau													  	  #             
+# ext-mbtv\mbtvinitialdata\resources\impex\essentialdataCMS-mobile-storepage.impex#               
+# MBTV AD team Vincent Lau													  	  #             
 ###################################################################################
 
 INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];title;name;masterTemplate(uid,$contentCV);label;businessUnit(code);defaultPage[default='false'];approvalStatus(code)[default='approved'];homepage[default='false'];restrictions(uid,$contentCV)[default='MobileExperienceRestriction'];onlyOneRestrictionMustApply[default='false']
@@ -233,7 +131,7 @@ INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];title;name;ma
 
 
 INSERT_UPDATE RotatingImagesComponent ; $contentCV[unique=true]         ; uid[unique=true]             		  ; name                 	   ;banners(&componentRef) ; &componentRef					   ;businessUnit(code)
-									  ;                                 ; STORECODE_CarouselComponent-mobile  ; Hktv Store Carousel Mobile ;          			   ; STORECODE_CarouselComponent-mobile;STORECODE
+									  ;                                 ; STORECODE_CarouselComponent-mobile  ; Mbtv Store Carousel Mobile ;          			   ; STORECODE_CarouselComponent-mobile;STORECODE
 
 
 INSERT_UPDATE SlideImagesComponent 	  ; $contentCV[unique=true]  		; uid[unique=true]					  		 ; name					   		 		   ;banners(&componentRef)   ; &componentRef								;businessUnit(code)
